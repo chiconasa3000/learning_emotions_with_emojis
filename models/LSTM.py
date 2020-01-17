@@ -31,7 +31,7 @@ class LSTM:
     def build_model(self):
         self.x = tf.v1.placeholder(shape=[None, self.seq_max_len], dtype=tf.int32)
         # Convert word ids from the input into ortogonal vectors
-        x_one_hot = tf.one_hot(self.x, self.vocab_size)
+        x_one_hot = tf.compat.v1.one_hot(self.x, self.vocab_size)
 
         # Forming the input representation for LSTM
         #   - length of input sequence x [batch size, vocabulary size]
