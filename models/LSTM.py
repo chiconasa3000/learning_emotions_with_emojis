@@ -29,7 +29,7 @@ class LSTM:
         self.num_classes = num_classes
 
     def build_model(self):
-        self.x = tf.placeholder(shape=[None, self.seq_max_len], dtype=tf.int32)
+        self.x = tf.v1.placeholder(shape=[None, self.seq_max_len], dtype=tf.int32)
         # Convert word ids from the input into ortogonal vectors
         x_one_hot = tf.one_hot(self.x, self.vocab_size)
 
